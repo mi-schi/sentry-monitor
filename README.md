@@ -1,2 +1,2 @@
-# supervisord-monitor
-Supervisord Monitoring Screen
+# sentry-monitor
+Sentry Monitoring Screen
