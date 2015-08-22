@@ -1,0 +1,39 @@
+{
+  "name": "enlightened-dc/sentry-monitor",
+  "description": "Sentry Monitoring Screen. Display the exceptions on a time line from your projects.",
+  "keywords": [
+    "Sentry",
+    "Monitor",
+    "Monitoring",
+    "Exceptions",
+    "Time"
+  ],
+  "homepage": "https://github.com/enlightened-dc/sentry-monitor",
+  "authors": [
+    {
+      "name": "Tommy Muehle",
+      "email": "tommy.muehle@gmail.com"
+    },
+    {
+      "name": "Michael Schindler",
+      "email": "madsn@gmx.de"
+    }
+  ],
+  "support": {
+    "source": "https://github.com/enlightened-dc/sentry-monitor",
+    "issues": "https://github.com/enlightened-dc/sentry-monitor/issues"
+  },
+  "license": "MIT",
+  "require": {
+    "php": ">=5.5.0",
+    "silex/silex": "^1.3",
+    "symfony/yaml": "^2.7",
+    "twig/twig": "^1.18",
+    "guzzlehttp/guzzle": "^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "EnlightenedDC\\Sentry\\Monitor\\": "src/"
+    }
+  }
+}
