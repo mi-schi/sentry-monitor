@@ -31,10 +31,12 @@ class Client
      */
     public function getProjects(Organisation $organisation)
     {
-        return $this->guzzleClient->get($organisation->getProjectsUrl(), [
+        $stream = $this->guzzleClient->get($organisation->getProjectsUrl(), [
             'verify' => false,
             'auth' =>  [$organisation->getApiKey(), '']
         ])->getBody()->getContents();
+
+        return json_decode($stream, true);
     }
 
     /**
@@ -44,9 +46,11 @@ class Client
      */
     public function getExceptions(Project $project)
     {
-        return $this->guzzleClient->get($project->getExceptionsUrl(), [
+        $stream = $this->guzzleClient->get($project->getExceptionsUrl(), [
             'verify' => false,
             'auth' =>  [$project->getOrganisation()->getApiKey(), '']
         ])->getBody()->getContents();
+
+        return json_decode($stream, true);
     }
 }
