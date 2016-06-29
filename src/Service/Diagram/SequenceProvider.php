@@ -36,7 +36,7 @@ class SequenceProvider
         }
 
         if (false === in_array($scale, ['day', 'hour'])) {
-            throw new \InvalidArgumentException(sprntf('The scale parameter "%s" should be "hour" or "day"', $scale));
+            throw new \InvalidArgumentException(sprintf('The scale parameter "%s" should be "hour" or "day"', $scale));
         }
 
         $datetimeFormat = '%Y-%m-%d %H:00:00';
