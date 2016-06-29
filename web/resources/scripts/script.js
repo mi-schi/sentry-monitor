@@ -28,7 +28,7 @@ $( function() {
         } );
     }
 
-    setTimeout( ajaxCall, 60000 );
+    setTimeout( ajaxCall, 60000*60 );
 
     ajaxCall();
 } );
