@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use EnlightenedDC\Sentry\Monitor\Command\ImportCommand;
+use EnlightenedDC\Sentry\Monitor\Command\RunCommand;
+use EnlightenedDC\Sentry\Monitor\Application as App;
+use EnlightenedDC\Sentry\Monitor\Service\SentryClient;
+use GuzzleHttp\Client;
+use EnlightenedDC\Sentry\Monitor\Service\Import\ProjectCollector;
+use EnlightenedDC\Sentry\Monitor\Service\Import\EventCollector;
+use EnlightenedDC\Sentry\Monitor\Service\Import\Importer;
+
+$app = new App;
+
+$app['sentry.client'] = $app->share(function () {
+    return new SentryClient(new Client);
+});
+
+$app['event.collector'] = $app->share(function ($app) {
+    return new EventCollector($app['sentry.client']);
+});
+
+$app['project.collector'] = $app->share(function ($app) {
+    return new ProjectCollector($app['sentry.client']);
+});
+
+$app['importer'] = $app->share(function ($app) {
+    return new Importer($app['db']);
+});
+
+$application = new Application();
+$application->add(new ImportCommand($app));
+$application->add(new RunCommand());
+$application->run();
