@@ -1,5 +1,0 @@
-api:
-  organisation-slug:
-    url: https://sentry.localhost
-    projectBlacklist: [ project-slug ]
-    apiKey: 214356ukzjtr3246uilo
