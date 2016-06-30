@@ -1,7 +1,9 @@
 <?php
 
-if (file_exists(__DIR__ . '/resources' . $_SERVER['SCRIPT_NAME'])) {
-    return false;
+if (file_exists(__DIR__ . '/scripts' . $_SERVER['SCRIPT_NAME'])) {
+    readfile(__DIR__ . '/scripts' . $_SERVER['SCRIPT_NAME']);
+
+    return;
 }
 
 require_once __DIR__ . '/../vendor/autoload.php';

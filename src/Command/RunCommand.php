@@ -42,7 +42,7 @@ class RunCommand extends Command
 
         $processBuilder = new ProcessBuilder([PHP_BINARY, '-S', $address, $webPath . '/index.php']);
         $processBuilder
-            ->setWorkingDirectory($webPath . '/resources')
+            ->setWorkingDirectory($webPath . '/scripts')
             ->setTimeout(null);
 
         $io->success(sprintf('Server running on "%s"', $address));
