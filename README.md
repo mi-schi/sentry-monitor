@@ -10,7 +10,7 @@ The `sentry-monitor` collect the events (mostly exceptions) from sentry and plot
 
 Download the `monitor.phar` file.
 
-     $ curl -Os https://github.com/enlightened-dc/sentry-monitor/releases/download/1.0.0/monitor.phar
+     $ curl -OsL https://github.com/enlightened-dc/sentry-monitor/releases/download/1.0.0/monitor.phar
      $ chmod +x monitor.phar
      
 ## Usage
