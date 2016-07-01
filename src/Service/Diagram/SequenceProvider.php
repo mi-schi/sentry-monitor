@@ -39,52 +39,98 @@ class SequenceProvider
             throw new \InvalidArgumentException(sprintf('The scale parameter "%s" should be "hour" or "day"', $scale));
         }
 
+        $data = [];
+        $datetimeFormat = $this->getDatetimeFormat($scale);
+        $points = $this->getZeroSizedPoints($days, $scale);
+
+        $projects = $this->connection->fetchAll(
+            'SELECT project FROM events WHERE organisation = ? GROUP BY project',
+            [$organisation]
+        );
+
+        foreach (array_column($projects, 'project') as $project) {
+            $data[] = [
+                'label' => $project,
+                'data' => $this->getFilledPoints($points, $datetimeFormat, $project)
+            ];
+        }
+
+        return $data;
+    }
+
+    /**
+     * @param string $days
+     * @param string $scale
+     *
+     * @return array
+     */
+    private function getZeroSizedPoints($days, $scale)
+    {
+        $lastPoint = mktime(date('H'), 0, 0);
+        $step = 3600;
+
+        if ('day' === $scale) {
+            $lastPoint = mktime(0, 0, 0);
+            $step = $step * 24;
+        }
+
+        $firstPoint = strtotime(sprintf('-%s day', $days), $lastPoint);
+        $points = [];
+
+        foreach (range($firstPoint, $lastPoint, $step) as $point) {
+            $points[] = [
+                $point * 1000,
+                0
+            ];
+        }
+
+        return $points;
+    }
+
+    /**
+     * @param string $scale
+     *
+     * @return string
+     */
+    private function getDatetimeFormat($scale)
+    {
         $datetimeFormat = '%Y-%m-%d %H:00:00';
 
         if ('day' === $scale) {
             $datetimeFormat = '%Y-%m-%d 00:00:00';
         }
 
-        return $this->getDataSequences($organisation, $days, $datetimeFormat);
+        return $datetimeFormat;
     }
 
     /**
-     * @param string $organisation
-     * @param int    $days
+     * @param array  $points
      * @param string $datetimeFormat
+     * @param string $project
      *
      * @return array
      */
-    private function getDataSequences($organisation, $days, $datetimeFormat)
+    private function getFilledPoints(array $points, $datetimeFormat, $project)
     {
-        $projects = $this->connection->fetchAll('SELECT project FROM events WHERE organisation = ? GROUP BY project', [$organisation]);
-        $data = [];
+        $events = $this->connection->fetchAll(
+            'SELECT strftime(?, created) as hour, COUNT(*) as count FROM events WHERE project = ? GROUP BY hour ORDER BY hour DESC',
+            [$datetimeFormat, $project]
+        );
 
-        foreach (array_column($projects, 'project') as $project) {
-            $events = $this->connection->fetchAll('SELECT strftime(?, created) as hour, COUNT(*) as count FROM events WHERE project = ? GROUP BY hour ORDER BY hour DESC', [$datetimeFormat, $project]);
-            $points = [];
+        foreach ($events as $event) {
+            $timestamp = strtotime($event['hour']) * 1000;
+            $key = array_search($timestamp, array_column($points, 0));
 
-            foreach ($events as $event) {
-                $timestamp = strtotime($event['hour']);
-
-                if (strtotime(sprintf('-%s day', $days)) > $timestamp) {
-                    continue;
-                }
-
-                $points[] = [
-                    $timestamp * 1000,
-                    $event['count']
-                ];
+            if (false === $key) {
+                break;
             }
 
-            $sequence = [
-                'label' => $project,
-                'data' => $points
+            $points[$key] = [
+                $timestamp,
+                $event['count']
             ];
-
-            $data[] = $sequence;
         }
 
-        return $data;
+        return $points;
     }
 }
