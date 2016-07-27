@@ -1,9 +1,9 @@
 <?php
 
-namespace EnlightenedDC\Sentry\Monitor\Command;
+namespace MS\Sentry\Monitor\Command;
 
-use EnlightenedDC\Sentry\Monitor\Application;
-use EnlightenedDC\Sentry\Monitor\Model\SentryRequest;
+use MS\Sentry\Monitor\Application;
+use MS\Sentry\Monitor\Model\SentryRequest;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputArgument;
@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
- * @package EnlightenedDC\Sentry\Monitor\Command
+ * @package MS\Sentry\Monitor\Command
  */
 class ImportCommand extends Command
 {

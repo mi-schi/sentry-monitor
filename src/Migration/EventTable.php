@@ -1,11 +1,11 @@
 <?php
 
-namespace EnlightenedDC\Sentry\Monitor\Migration;
+namespace MS\Sentry\Monitor\Migration;
 
 use Doctrine\DBAL\Connection;
 
 /**
- * @package EnlightenedDC\Sentry\Monitor\Migration
+ * @package MS\Sentry\Monitor\Migration
  */
 class EventTable
 {

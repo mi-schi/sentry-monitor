@@ -1,11 +1,11 @@
 <?php
 
-namespace EnlightenedDC\Sentry\Monitor\Service\Import;
+namespace MS\Sentry\Monitor\Service\Import;
 
 use Doctrine\DBAL\Connection;
 
 /**
- * @package EnlightenedDC\Sentry\Monitor\Service\Import
+ * @package MS\Sentry\Monitor\Service\Import
  */
 class Importer
 {

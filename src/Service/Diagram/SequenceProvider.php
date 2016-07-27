@@ -1,11 +1,11 @@
 <?php
 
-namespace EnlightenedDC\Sentry\Monitor\Service\Diagram;
+namespace MS\Sentry\Monitor\Service\Diagram;
 
 use Doctrine\DBAL\Connection;
 
 /**
- * @package EnlightenedDC\Sentry\Monitor\Diagram
+ * @package MS\Sentry\Monitor\Diagram
  */
 class SequenceProvider
 {

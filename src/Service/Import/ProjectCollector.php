@@ -1,12 +1,12 @@
 <?php
 
-namespace EnlightenedDC\Sentry\Monitor\Service\Import;
+namespace MS\Sentry\Monitor\Service\Import;
 
-use EnlightenedDC\Sentry\Monitor\Model\SentryRequest;
-use EnlightenedDC\Sentry\Monitor\Service\SentryClient;
+use MS\Sentry\Monitor\Model\SentryRequest;
+use MS\Sentry\Monitor\Service\SentryClient;
 
 /**
- * @package EnlightenedDC\Sentry\Monitor\Service\Import
+ * @package MS\Sentry\Monitor\Service\Import
  */
 class ProjectCollector
 {

@@ -4,14 +4,14 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
-use EnlightenedDC\Sentry\Monitor\Command\ImportCommand;
-use EnlightenedDC\Sentry\Monitor\Command\RunCommand;
-use EnlightenedDC\Sentry\Monitor\Application as App;
-use EnlightenedDC\Sentry\Monitor\Service\SentryClient;
+use MS\Sentry\Monitor\Command\ImportCommand;
+use MS\Sentry\Monitor\Command\RunCommand;
+use MS\Sentry\Monitor\Application as App;
+use MS\Sentry\Monitor\Service\SentryClient;
 use GuzzleHttp\Client;
-use EnlightenedDC\Sentry\Monitor\Service\Import\ProjectCollector;
-use EnlightenedDC\Sentry\Monitor\Service\Import\EventCollector;
-use EnlightenedDC\Sentry\Monitor\Service\Import\Importer;
+use MS\Sentry\Monitor\Service\Import\ProjectCollector;
+use MS\Sentry\Monitor\Service\Import\EventCollector;
+use MS\Sentry\Monitor\Service\Import\Importer;
 
 $app = new App;
 

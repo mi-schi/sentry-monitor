@@ -1,9 +1,9 @@
 <?php
 
-namespace EnlightenedDC\Sentry\Monitor\Model;
+namespace MS\Sentry\Monitor\Model;
 
 /**
- * @package EnlightenedDC\Sentry\Monitor\Model
+ * @package MS\Sentry\Monitor\Model
  */
 class SentryRequest
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace EnlightenedDC\Sentry\Monitor\Command;
+namespace MS\Sentry\Monitor\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -10,7 +10,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Process\ProcessBuilder;
 
 /**
- * @package EnlightenedDC\Sentry\Monitor\Command
+ * @package MS\Sentry\Monitor\Command
  */
 class RunCommand extends Command
 {

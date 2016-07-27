@@ -35,7 +35,7 @@
   },
   "autoload": {
     "psr-4": {
-      "EnlightenedDC\\Sentry\\Monitor\\": "src/"
+      "MS\\Sentry\\Monitor\\": "src/"
     }
   }
 }

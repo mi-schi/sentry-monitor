@@ -1,13 +1,13 @@
 <?php
 
-namespace EnlightenedDC\Sentry\Monitor;
+namespace MS\Sentry\Monitor;
 
-use EnlightenedDC\Sentry\Monitor\Migration\EventTable;
+use MS\Sentry\Monitor\Migration\EventTable;
 use Silex\Application as BaseApplication;
 use Silex\Provider\DoctrineServiceProvider;
 
 /**
- * @package EnlightenedDC\Sentry\Monitor
+ * @package MS\Sentry\Monitor
  */
 class Application extends BaseApplication
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace EnlightenedDC\Sentry\Monitor\Service;
+namespace MS\Sentry\Monitor\Service;
 
-use EnlightenedDC\Sentry\Monitor\Model\SentryRequest;
+use MS\Sentry\Monitor\Model\SentryRequest;
 use GuzzleHttp\Client;
 
 /**
- * @package EnlightenedDC\Sentry\Monitor\Service
+ * @package MS\Sentry\Monitor\Service
  */
 class SentryClient
 {

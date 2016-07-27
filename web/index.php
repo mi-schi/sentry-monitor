@@ -8,8 +8,8 @@ if (file_exists(__DIR__ . '/scripts' . $_SERVER['SCRIPT_NAME'])) {
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use EnlightenedDC\Sentry\Monitor\Application as App;
-use EnlightenedDC\Sentry\Monitor\Service\Diagram\SequenceProvider;
+use MS\Sentry\Monitor\Application as App;
+use MS\Sentry\Monitor\Service\Diagram\SequenceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
