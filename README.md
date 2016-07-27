@@ -1,5 +1,8 @@
 # sentry-monitor
 
+[![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://raw.githubusercontent.com/mi-schi/sentry-monitor/master/LICENSE)
+[![Github All Releases](https://img.shields.io/github/downloads/mi-schi/sentry-monitor/total.svg?maxAge=2592000)](https://github.com/mi-schi/sentry-monitor)
+
 ## Features
 
 The `sentry-monitor` collect the events (mostly exceptions) from sentry and plot the information in a line chart diagram.
