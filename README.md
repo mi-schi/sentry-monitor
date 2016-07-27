@@ -1,6 +1,8 @@
 # sentry-monitor
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://raw.githubusercontent.com/mi-schi/sentry-monitor/master/LICENSE)
+[![Build Status](https://scrutinizer-ci.com/g/mi-schi/sentry-monitor/badges/build.png?b=master)](https://scrutinizer-ci.com/g/mi-schi/sentry-monitor/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mi-schi/sentry-monitor/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mi-schi/sentry-monitor/?branch=master)
 [![Github All Releases](https://img.shields.io/github/downloads/mi-schi/sentry-monitor/total.svg?maxAge=2592000)](https://github.com/mi-schi/sentry-monitor)
 
 ## Features
