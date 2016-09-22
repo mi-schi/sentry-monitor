@@ -4,9 +4,6 @@ namespace MS\Sentry\Monitor\Service\Import;
 
 use Doctrine\DBAL\Connection;
 
-/**
- * @package MS\Sentry\Monitor\Service\Import
- */
 class Importer
 {
     /**

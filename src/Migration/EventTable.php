@@ -4,9 +4,6 @@ namespace MS\Sentry\Monitor\Migration;
 
 use Doctrine\DBAL\Connection;
 
-/**
- * @package MS\Sentry\Monitor\Migration
- */
 class EventTable
 {
     /**

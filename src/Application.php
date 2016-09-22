@@ -6,9 +6,6 @@ use MS\Sentry\Monitor\Migration\EventTable;
 use Silex\Application as BaseApplication;
 use Silex\Provider\DoctrineServiceProvider;
 
-/**
- * @package MS\Sentry\Monitor
- */
 class Application extends BaseApplication
 {
     /**

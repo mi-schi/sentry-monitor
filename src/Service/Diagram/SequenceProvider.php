@@ -4,9 +4,6 @@ namespace MS\Sentry\Monitor\Service\Diagram;
 
 use Doctrine\DBAL\Connection;
 
-/**
- * @package MS\Sentry\Monitor\Diagram
- */
 class SequenceProvider
 {
     /**
@@ -23,13 +20,13 @@ class SequenceProvider
     }
 
     /**
-     * @param string $organisation
+     * @param array  $projects
      * @param string $days
      * @param string $scale
      *
      * @return array
      */
-    public function getSequences($organisation, $days, $scale)
+    public function getSequences(array $projects, $days, $scale)
     {
         if (false === filter_var($days, FILTER_VALIDATE_INT)) {
             throw new \InvalidArgumentException(sprintf('The days parameter "%s" should be an integer', $days));
@@ -43,12 +40,7 @@ class SequenceProvider
         $datetimeFormat = $this->getDatetimeFormat($scale);
         $points = $this->getZeroSizedPoints($days, $scale);
 
-        $projects = $this->connection->fetchAll(
-            'SELECT project FROM events WHERE organisation = ? GROUP BY project',
-            [$organisation]
-        );
-
-        foreach (array_column($projects, 'project') as $project) {
+        foreach ($projects as $project) {
             $data[] = [
                 'label' => $project,
                 'data' => $this->getFilledPoints($points, $datetimeFormat, $project)

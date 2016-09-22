@@ -5,9 +5,6 @@ namespace MS\Sentry\Monitor\Service\Import;
 use MS\Sentry\Monitor\Model\SentryRequest;
 use MS\Sentry\Monitor\Service\SentryClient;
 
-/**
- * @package MS\Sentry\Monitor\Service\Import
- */
 class ProjectCollector
 {
     const PROJECTS_PATTERN = '/api/0/organizations/%s/projects/';

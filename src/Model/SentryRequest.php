@@ -2,9 +2,6 @@
 
 namespace MS\Sentry\Monitor\Model;
 
-/**
- * @package MS\Sentry\Monitor\Model
- */
 class SentryRequest
 {
     /**

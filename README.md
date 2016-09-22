@@ -15,7 +15,7 @@ The `sentry-monitor` collect the events (mostly exceptions) from sentry and plot
 
 Download the `monitor.phar` file.
 
-     $ curl -OsL https://github.com/mi-schi/sentry-monitor/releases/download/1.1.0/monitor.phar
+     $ curl -OsL https://github.com/mi-schi/sentry-monitor/releases/download/stable/monitor.phar
      $ chmod +x monitor.phar
      
 ## Usage
@@ -40,4 +40,4 @@ Start the build-in server with the default address `http://localhost:8006`:
 
     monitor.phar run
     
-Go to `http://localhost:8006/[organisation-slug]/3/hour`. The three defines the days on the x-axis that will be displayed. You can define `hour` or `day` as x-axis scale.
+Go to `http://localhost:8006/[organisation-slug],3,hour,[project-name]`. The three defines the days on the x-axis that will be displayed. You can define `hour` or `day` as x-axis scale. The parameter `[project-name]` is optional.

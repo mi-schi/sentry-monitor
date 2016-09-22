@@ -5,9 +5,6 @@ namespace MS\Sentry\Monitor\Service;
 use MS\Sentry\Monitor\Model\SentryRequest;
 use GuzzleHttp\Client;
 
-/**
- * @package MS\Sentry\Monitor\Service
- */
 class SentryClient
 {
     /**
