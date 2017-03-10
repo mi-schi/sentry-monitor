@@ -30,7 +30,11 @@ class SentryClient
     {
         $stream = $this
             ->client
-            ->get($sentryRequest->getBaseUrl() . $endpoint, ['auth' =>  [$sentryRequest->getApiKey(), '']])
+            ->get($sentryRequest->getBaseUrl() . $endpoint, [
+                'headers' =>  [
+                    'Authorization' => sprintf('Bearer %s', $sentryRequest->getApiKey())
+                ]
+            ])
             ->getBody()
             ->getContents();
 

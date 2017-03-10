@@ -34,6 +34,8 @@ If you want to import all projects instead of one or more specific projects use 
 
     monitor.phar import [organisation-slug] --sentry-url=https://sentry.domain.com --sentry-api-key=ewd7wg68e76gziefb9eb --project-blacklist=sentry --project-blacklist=my-test-project
 
+The sentry-api-key is the new oauth2 key you can generate on the `api/` page.
+
 ### Show the diagram
 
 Start the build-in server with the default address `http://localhost:8006`:
